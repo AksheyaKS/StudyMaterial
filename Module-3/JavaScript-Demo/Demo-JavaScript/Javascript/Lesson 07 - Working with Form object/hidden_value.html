@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+	<form action="" method="POST" id="myForm">
+	<input type="Hidden" name="objHidden" value="" id="objHidden">
+	<input type="Button" name="" value="Get hidden value" id="myButton" 	onClick=getHidden()>
+	
+	<script type="" language="JavaScript">
+	myForm.objHidden.value=("Good Morning")
+
+	function getHidden() 
+	{
+      		y=myForm.objHidden.value
+     		self.alert("The Hidden object's value is : " + y)
+	}
+
+</script> </form>
+ 
+</body>
+</html>

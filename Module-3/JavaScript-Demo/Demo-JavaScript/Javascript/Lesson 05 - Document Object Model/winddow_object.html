@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Open and close a window</TITLE>
+<SCRIPT LANGUAGE = "JavaScript">
+var anotherWindow = null
+function createWindow()
+{
+	//window.open returns a window object
+	anotherWindow = window.open("","","toolbar=no,status=no,width=200,height=100")
+	if(anotherWindow != null)
+	{
+		//create the html
+		var newContent = "<HTML><HEAD><TITLE>Another Window</TITLE></HEAD>"
+		newContent += "<BODY><H3>Another Window</H3>"
+		newContent += "<FORM><INPUT TYPE = 'button' VALUE = 'Close' onClick = 'self.close()'></FORM>"
+		newContent += "</BODY></HTML>"
+		//write the html
+		anotherWindow.document.write(newContent)
+	} 
+}
+
+</SCRIPT> 
+</HEAD>
+<BODY onload="window.defaultStatus='Welcome to Pace'; return true"><!--window.defaultStatus property normally an empty string-->
+<p id = "openWindow" VALUE = "New Window" onClick = "createWindow()">click here to open New Window</p>
+<p id = "closeWindow" VALUE = "Close Window" onClick = "anotherWindow.close()"> click here to close it</p>
+	   Move the mouse around, and watch the 
+<A HREF = "message" onMouseOver = "window.status = 'message'; return true">
+message
+</A>
+on the status line changing.
+<A HREF = "https://intranet.patni.com" onMouseOver = "window.status = 'Pace'; return true">
+PCS interanet </A>
+</FORM>
+</BODY>
+</HTML>

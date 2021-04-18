@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+<Table Border="1">
+<tr><td>MIME Type</td><td>Description</td><td>Extensions</td><td>Plugin</td></tr>
+
+<script language="JavaScript" type = "text/javascript">
+
+for (var i = 0; i < navigator.mimeTypes.length ; i++) {
+  document.write("<TD>", navigator.mimeTypes[i].type, "</TD>")
+  document.write("<TD>", navigator.mimeTypes[i].description, "</TD>")
+  if (navigator.mimeTypes[i].suffixes != "")
+    document.write("<TD>", navigator.mimeTypes[i].suffixes, "</TD>")
+  else
+    document.write("<TD>", navigator.mimeTypes[i].suffixes + " * ", "</TD>");
+
+  if (navigator.mimeTypes[i].enabledPlugin)
+    document.write("<TD>", navigator.mimeTypes[i].enabledPlugin.name, "</TD></TR>");
+  else
+    document.write("<TD>", "None", "</TD></TR>");
+}
+
+</script>
+</table>
+</body>
+</html> 
+ 
+ 
+

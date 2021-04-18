@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Destructuring</title>
+	</head>
+	<body>
+		<h1>ES6 - Destructuring</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		/*array destructuring*/
+		let myArray = [1, 2, 3];
+		let [a, b, c] =  myArray;
+		console.log("a = %d b = %d c = %d",a,b,c);
+		
+		let anotherArray = [1, 2, 3];
+		let [d, , f] =  anotherArray; //IGNORING VALUES
+		console.log("d = %d f = %d",d,f);
+		
+		let products = ["Television","Mobile Phone","Music Player"];
+		let productArray = [tv,...others] = products;
+		console.log(tv,others);
+		
+		let sizes = ["Small","Medium"];
+		let [s,m,l="Large"] = sizes;
+		console.log(s,m,l);
+		
+		let verifySalary=function([low,average],high){
+			console.log(average);
+		}
+		verifySalary([10000,150000],50000);
+		
+		
+		let employee = {
+			id:123456,
+			name:'Rahul'
+		}
+		
+		/*object destructuring*/
+		let {id,name} = employee;
+		console.log(id,name);
+		
+		let person = {
+			first:'Rahul',
+			last:'Vikash'
+		}
+		
+		let {first:firstName,last:lastName} = person;
+		console.log(firstName,lastName);
+		
+		
+	})();
+	</script>
+</html>

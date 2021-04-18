@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Asynchronous Programming</title>
+	</head>
+	<body>
+		<h1>ES6 - Asynchronous Programming - Promise Pattern</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		var doAsync = function(){
+			var p = new Promise(function(resolve,reject){
+				setTimeout(function(){
+					resolve({msg:'doAsync promise fulfilled'});
+					//reject({msg:'doAsync promise rejected'});
+				},5000);
+			});
+			return p;
+		}
+		doAsync().then(function(response){
+			console.log("Success : ",response.msg);
+		},function(response){
+			console.log("Failed : ",response.msg);
+		});
+	})();
+	</script>
+</html>

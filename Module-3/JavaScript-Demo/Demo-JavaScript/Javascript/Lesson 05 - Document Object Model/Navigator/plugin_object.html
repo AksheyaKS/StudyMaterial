@@ -1,0 +1,28 @@
+<HTML>
+    <HEAD>
+      <TITLE>Checking the plug-ins Array</TITLE>
+    </HEAD>
+    <BODY>
+    <SCRIPT LANGUAGE="JavaScript">
+    
+    	var numPlugins = navigator.plugins.length;
+	if (numPlugins > 0)
+	{
+		document.write('<H3>The Plug-ins You Have Installed</H3><HR>');
+    	}
+	else
+	{
+	      document.write('<H3>You have No Plug-ins Installed.</H3>');
+    	}
+    	
+	for (i = 0; i < numPlugins; i++)
+	{
+		currPlugin = navigator.plugins[i];
+      		document.write('<P><B>Name:</B> ' + currPlugin.name + '<BR>');
+      		document.write('<B>Filename:</B> ' + currPlugin.filename + '<BR>');
+      		document.write('<B>Description:</B> ' + currPlugin.description + '<BR>');
+    }
+  
+    </SCRIPT>
+    </BODY>
+    </HTML>

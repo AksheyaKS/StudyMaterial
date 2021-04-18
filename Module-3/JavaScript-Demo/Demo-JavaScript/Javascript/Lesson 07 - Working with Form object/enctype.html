@@ -1,0 +1,19 @@
+<html>
+<head>
+<script type="text/javascript">
+function showEnctype()
+{
+	var x=document.getElementById("myForm");
+	alert(x.enctype);
+}
+</script>
+</head>
+<body>
+
+<form id="myForm" method=post>
+	Name: <input type="text" value="Mickey Mouse" />
+	<input type="button" onclick="showEnctype()" value="Show enctype" />
+</form>
+
+</body>
+</html>

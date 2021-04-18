@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Using Classes</title>
+	</head>
+	<body>
+		<h1>ES6 - Using Classes</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		/*Using the class declaration */
+		class Foo{
+			constructor(){
+				console.log("Foo constructor invoked");
+			}
+			sayHi(){
+				return "Hi from Foo";
+			}
+		}
+		let foo = new Foo();	
+		//foo = new Foo();			
+		console.log("Foo's type : "+typeof Foo);
+		console.log("foo instance of Foo Type");
+		console.log(foo instanceof Foo);
+		console.log(foo.sayHi());
+		console.log("foo.sayHi === Foo.prototype.sayHi");
+		console.log(foo.sayHi === Foo.prototype.sayHi);
+		console.log("Foo Attached to window object ?");
+		console.log(Foo === window.Foo);
+		
+		
+		/*Using the class expression */
+		let Baz = class{
+			greet(){
+				return "Greetings from Baz-greet";
+			}
+		}
+		let baz = new Baz();
+		console.log(baz.greet());
+		
+		/*class hoisting not supported*/
+		let quax = new Quax();
+		class Quax{}
+		
+		
+	})();
+	</script>
+</html>

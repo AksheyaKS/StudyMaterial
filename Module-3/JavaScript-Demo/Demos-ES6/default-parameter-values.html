@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Default parameter value</title>
+	</head>
+	<body>
+		<h1>ES6 - Default parameter value</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		var buildName = function(firstName, middleName, lastName = "M") {
+			if (middleName !== undefined)
+				console.log("%s %s %s", firstName, middleName, lastName);
+			else
+				console.log("%s %s", firstName, lastName);
+		}
+		buildName("Karthik",undefined,undefined);
+		buildName("Ashik", "Mohammed", "Ibrahim");
+		
+		var getTotal = function(price, tax = price * 0.05){
+			console.log(price + tax);
+		}
+		getTotal(50);
+		
+		var getGrandTotal = function(price = adjustment, adjustment = 1){
+			console.log(price + adjustment);
+		}
+		//getGrandTotal();
+		
+		var getResults = new Function("amount = 50","return amount;");
+		console.log(getResults());
+	})();
+	</script>
+</html>

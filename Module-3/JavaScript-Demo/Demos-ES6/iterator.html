@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Iterators</title>
+	</head>
+	<body>
+		<h1>ES6 - Implementing iterator</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		let idMaker = {
+			[Symbol.iterator]:function(){
+				let nextId = 1;
+				return{
+					next:function(){
+						let value = nextId > 5 ? undefined : nextId++;
+						let done = !value;
+						return {value,done};
+					}
+				}
+			}
+		}
+		for(let counter of idMaker){
+			console.log('counter : ',counter);
+		}
+	})();
+	</script>
+</html>

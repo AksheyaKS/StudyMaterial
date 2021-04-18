@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>Promise resolving another promise</title>
+	</head>
+	<body>
+		<h1>Promise resolving another promise</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		var promiseFn = function(){
+			//return Promise.resolve("Promise Fulfilled");
+			return Promise.reject();
+		} 
+		var asyncOperation = function(){
+			if(confirm("Are you sure to resolve the promise?"))
+				return Promise.resolve(promiseFn());
+			else
+				return Promise.reject('async Failed');
+		}
+		asyncOperation().then(function(res){
+			console.log("Success :",res);
+		},function(res){
+			console.log("Fail :",res);
+		});
+		
+	})();
+	</script>
+</html>

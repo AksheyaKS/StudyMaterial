@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - new.target</title>
+	</head>
+	<body>
+		<h1>ES6 - new.target</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		class Foo{
+			static staticMethod(){
+				return 100;
+			}
+			constructor(){
+				console.log("Accessing static method of "+new.target.name+" in the initial constuctor call: " +new.target.staticMethod());
+			}
+		}
+		class Baz extends Foo{
+			constructor(){
+				super();
+			}
+			static staticMethod(){
+				return 1000;
+			}
+		}
+		new Foo(); // creating Foo instance
+		new Baz(); // creating Baz instance
+		
+	})();
+	</script>
+</html>

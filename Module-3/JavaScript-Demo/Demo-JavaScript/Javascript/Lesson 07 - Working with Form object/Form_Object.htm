@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>Search Form</TITLE>
+<script language="javascript">
+	function doSearch()
+	{
+		var searchField="";
+		for(i=0;i<document.frm1.SearchBy.length;i++)
+		{
+			if(document.frm1.SearchBy[i].checked)
+			{
+				searchField=document.frm1.SearchBy[i].value;
+				break;
+			}
+		}
+		if((document.frm1.searchByTxt.value==null)||(document.frm1.searchByTxt.value==""))
+		{
+			alert("Please enter your search criteria before continuing.");	
+		}
+		else
+		{
+			if(document.frm1.case1.checked)
+			{
+				chk_case=document.frm1.case1.value
+				searchText=document.frm1.searchByTxt.value;
+				alert("Searching..."+searchText+" in "+searchField+" with "+chk_case);
+			}
+			else
+			{
+				searchText=document.frm1.searchByTxt.value;
+				alert("Searching..."+searchText+" in "+searchField);
+			}
+		}
+	 }
+	function clearForm()
+	{
+		frm1.reset();
+	}
+</script>
+</HEAD>
+<BODY>
+
+<h1>Intranet Employee Database</h1>
+<hr>
+<form name="frm1" method="post">	
+	<pre>Search by</pre>
+	<i>
+	<input type="radio" value=FirstName name=SearchBy>First Name
+	<input type="radio" checked value=LastName name=SearchBy>Last Name
+	<input type="radio" value=Title name=SearchBy>Title
+	<input type="radio" value=Department name=SearchBy>Department
+	<br><br>
+	Text:  <input type="text" maxlength=30 size=30 name=searchByTxt>
+	<br><br>
+	<input type=checkbox name=case1 value=MatchCase>Match Case
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type=button onclick=doSearch() value=Find name=btnFind>
+	<input type=button onclick=clearForm() value=Clear name=btnClear>
+	</i>
+</form>
+</BODY>
+</HTML>

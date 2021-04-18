@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - symbol</title>
+	</head>
+	<body>
+		<h1>ES6 - symbol</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		let sym = Symbol('foo');
+		console.log(typeof sym);
+		
+		let sym1 = Symbol('foo');
+		console.log(sym === sym1);
+		
+		let symbol1 = Symbol.for('sample');
+		let symbol2 = Symbol.for('sample');
+		console.log("Description for symbol symbol1: "+Symbol.keyFor(symbol1));
+		console.log(symbol1 === symbol2);
+
+		
+		let obj = {
+			//To create or retrieve a property key using symbols, you need to use the [] token
+			//computed property name
+			[Symbol.for('article')]:'ECMAScript 2015'			
+		}
+		console.log(obj[Symbol.for('article')]);
+		
+		console.log(Object.getOwnPropertySymbols(obj));
+		
+		
+	})();
+	</script>
+</html>

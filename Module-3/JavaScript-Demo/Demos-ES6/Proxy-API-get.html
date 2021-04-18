@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>Proxy API - get</title>
+	</head>
+	<body>
+		<h1>Proxy API - get()</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		class Foo{
+			constructor(){
+				this.name = "Karthik";
+				this.salary = 0;
+			}
+		}
+		let fooObj = new Foo();
+		var proxyFoo = new Proxy(fooObj,{
+			get:function(target,prop,receiver){
+				console.log("Attempted to access : ",prop," property.");
+				if(prop == "salary")
+					return "Access Denied";
+				return Reflect.get(target,prop,receiver);
+			}
+		});
+		console.log("Accessing Name : ",proxyFoo.name);
+		console.log("Accessing Salary : ",proxyFoo.salary);
+		
+	})();
+	</script>
+</html>

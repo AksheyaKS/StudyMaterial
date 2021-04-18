@@ -1,0 +1,186 @@
+<html>
+<head>
+
+<title>Common Window Methods</title>
+
+<script type="text/javascript">
+
+<!--
+
+var myWindow;
+
+function openIt()
+
+{
+
+ myWindow = open('','mywin','height=300,width=300,scrollbars=yes');
+
+ myWindow.document.writeln("<html><head><title>fun</title></head><body>");
+
+ myWindow.document.writeln("<table bgcolor='#ffcc66' border='1'width='600'><tr><td>");
+
+ myWindow.document.writeln("<h1>JavaScript Window Methods</h1><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />");
+
+ myWindow.document.writeln("</tr></td></table></body></html>");
+
+ myWindow.document.close();
+
+ myWindow.focus();
+
+}
+
+
+
+function moveIt()
+
+{
+
+ if ((window.myWindow) && (myWindow.closed == false))
+
+ myWindow.moveTo(document.testform.moveX.value,
+
+document.testform.moveY.value);
+
+}   
+
+
+
+function scrollIt()
+
+{
+
+ if ((window.myWindow) && (myWindow.closed == false))
+
+    myWindow.scrollTo(document.testform.scrollX.value,
+
+document.testform.scrollY.value);
+
+}   
+
+
+
+function resizeIt()
+
+{
+
+ if ((window.myWindow) && (myWindow.closed == false))
+
+    myWindow.resizeTo(document.testform.resizeX.value,
+
+document.testform.resizeY.value);
+
+}   
+
+//-->
+
+</script>
+
+</head>
+
+<body onload="openIt();">
+
+<h1 align="center">Window Methods Tester</h1>
+
+<hr />
+
+<form name="testform" id="testform" action="#" method="get">
+
+<input type="button" value="Open Window" onclick="openIt();" />
+
+<input type="button" value="Close Window" onclick="myWindow.close();" />
+
+<input type="button" value="Focus Window" onclick="if (myWindow)
+
+ myWindow.focus();" />
+
+<input type="button" value="Blur Window" onclick="if (myWindow) myWindow.blur();"
+
+ />
+
+<br /><br />
+
+<input type="button" value="Move Up" onclick="if (myWindow) 
+
+ myWindow.moveBy(0,-10);" />
+
+<input type="button" value="Move Left" onclick="if (myWindow) 
+
+ myWindow.moveBy(-10,0);" />
+
+<input type="button" value="Move Right" onclick="if (myWindow)
+
+ myWindow.moveBy(10,0);" />
+
+<input type="button" value="Move Down" onclick="if (myWindow)
+
+ myWindow.moveBy(0,10);" />
+
+<br /><br />
+
+
+
+X: <input type="text" size="4" name="moveX" id="moveX" value="0" /> 
+
+Y: <input type="text" size="4" name="moveY" id="moveY" value="0" />
+
+<input type="button" value="Move To" onclick="moveIt();" />
+
+<br /><br />
+
+<input type="button" value="Scroll Up" onclick="if (myWindow)
+
+ myWindow.scrollBy(0,-10);" />
+
+<input type="button" value="Scroll Left" onclick="if (myWindow)
+
+ myWindow.scrollBy(-10,0);" />
+
+<input type="button" value="Scroll Right" onclick="if (myWindow)
+
+ myWindow.scrollBy(10,0);" />
+
+<input type="button" value="Scroll Down" onclick="if (myWindow)
+
+ myWindow.scrollBy(0,10);" />
+
+<br /><br />
+
+
+
+X: <input type="text" size="4" name="scrollX" id="scrollX" value="0" /> 
+
+Y: <input type="text" size="4" name="scrollY" id="scrollY" value="0" />
+
+<input type="button" value="Scroll To" onclick="scrollIt();" />
+
+<br /><br />
+
+<input type="button" value="Resize Up" onclick="if (myWindow)
+
+ myWindow.resizeBy(0,-10);" />
+
+<input type="button" value="Resize Left" onclick="if (myWindow)
+
+ myWindow.resizeBy(-10,0);" />
+
+<input type="button" value="Resize Right" onclick="if (myWindow)
+
+ myWindow.resizeBy(10,0);" />
+
+<input type="button" value="Resize Down" onclick="if (myWindow)
+
+ myWindow.resizeBy(0,10);" /><br />
+
+X: <input type="text" size="4" name="resizeX" id="resizeX" value="0" /> 
+
+Y: <input type="text" size="4" name="resizeY" id="resizeY" value="0" />
+
+<input type="button" value="Resize To" onclick="resizeIt();" />
+
+<br /><br />
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.my{
+    color:red;
+    
+}
+.my:hover{
+    color:blue;
+    background-color: aquamarine;
+}

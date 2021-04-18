@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - well-known symbols</title>
+	</head>
+	<body>
+		<h1>ES6 - well-known symbols</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		/*Symbol.toStringTag : A string value used for the default description of an object*/
+		class Foo{}
+		Foo.prototype[Symbol.toStringTag] = "Foo";
+		let foo = new Foo();
+		console.log(foo.toString());
+		
+		/*Symbol.isConcatSpreadable : A Boolean value indicating if an object should be flattened to its array elements*/
+		let numbers = [4,8,12];
+		numbers[Symbol.isConcatSpreadable] = false;
+		console.log([].concat(numbers));
+		
+		/*Symbol.match well-known symbol specifies the matching of a regular expression against a string*/
+		var regex = /foo/;
+		regex[Symbol.match] = false;
+		console.log(/foo/.startsWith(regex));
+		
+		
+		
+		
+	})();
+	</script>
+</html>

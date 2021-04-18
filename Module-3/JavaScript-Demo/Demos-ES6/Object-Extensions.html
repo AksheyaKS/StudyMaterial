@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Object Extenions</title>
+	</head>
+	<body>
+		<h1>ES6 - Object Extensions</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		/*Object.setPrototypeOf*/
+		let objA = {x:1};
+		let objB = {y:2};
+		Object.setPrototypeOf(objB,objA);
+		
+		/*Object.is*/
+		console.log('Accessing x via objB : '+objB.y);
+		console.log('Object.is(0, -0) : ',Object.is(0, -0));
+		console.log('0 === -0 :',0 === -0);
+		console.log('Object.is(NaN, 0/0) : ',Object.is(NaN, 0/0));
+		console.log('NaN === 0/0 : ',NaN === 0/0);
+		console.log('Object.is(NaN, NaN) : ',Object.is(NaN, NaN));
+		console.log('NaN ===NaN : ',NaN ===NaN)
+		
+		/*Object.assign*/
+		let a = {a:1};
+		let b = {a:5, b:2};
+		let c = {a:5,c:5,d:6};
+		c.__proto__ = b;
+		let target = {};
+		Object.assign(target,a,c);
+		console.log(target);
+		
+		/*Object.getOwnPropertySymbols*/
+		let article  ={
+			title:'Hi',
+			[Symbol.for('article')]:'My article'
+		}
+		console.log(Object.getOwnPropertySymbols(article));
+	})();
+	</script>
+</html>

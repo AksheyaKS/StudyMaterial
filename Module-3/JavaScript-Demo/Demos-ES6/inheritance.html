@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Implementing inheritance in classes</title>
+	</head>
+	<body>
+		<h1>ES6 - Implementing inheritance in classes</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		class Foo{
+			constructor(){
+				console.log('Constructing Foo');
+			}
+			getRandomNumber(){
+				return Math.random();
+			}
+		}
+		class Baz extends Foo{
+			constructor(){
+				super(); // Mandatory since constructor defined
+				console.log('Constructing Baz');
+			}
+			getRandomNumber(){
+				//Access parent class members
+				return "Generated Random Number : "+ super.getRandomNumber();
+			}
+		}
+		let baz = new Baz();
+		console.log(baz.getRandomNumber());
+		
+		/*Using super in object literal*/
+
+		let quax = {
+			getRandomNumber(){
+				return Math.random();
+			}
+		}
+		let bar = {
+			getRandomNumber(){
+				return "Generated Random Number : "+ super.getRandomNumber();
+			}
+		}
+		Object.setPrototypeOf(bar,quax);
+		console.log("object prototypal inheritance : "+bar.getRandomNumber());
+	})();
+	</script>
+</html>

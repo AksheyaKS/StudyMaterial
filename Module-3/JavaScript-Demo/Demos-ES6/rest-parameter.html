@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - The rest parameter</title>
+	</head>
+	<body>
+		<h1>ES6 - rest parameter</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		var test = function(name,age,...others){
+			console.log(name,age,others);
+		}
+		test('Rahul',30,'Consultant','Manager');
+		
+		var demo = function(name,age,...others){
+			console.log(name,age,others);
+		}
+		demo('Rahul',30);
+	})();
+	</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>Reflect-API</title>
+	</head>
+	<body>
+		<h1>Reflect.construct() - Method</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		class Foo{
+			constructor(name,title){
+				console.log(`Name : ${name} Title : ${title}`);
+				console.log(`new.target:${new.target}`);
+			}
+		}
+		
+		function baz(){
+		}
+		
+		var fooObj01 = Reflect.construct(Foo,['Ganesh','Manager']);
+		console.log('fooObj01 instanceof Foo : ',fooObj01 instanceof Foo);
+		
+		var fooObj02 = Reflect.construct(Foo,['Veena','Director'],baz);
+		console.log('fooObj02 instanceof baz : ',fooObj02 instanceof baz);
+		
+	})();
+	</script>
+</html>

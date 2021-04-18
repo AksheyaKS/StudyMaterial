@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - let Keyword</title>
+	</head>
+	<body>
+		<h1>ES6 - let Keyword</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+		(function(){
+			let demoVariable = 5;
+			{
+				let demoVariable = 10; //accessible only inside this block 
+				//let demoVariable = 9; // throws error
+			}
+			console.log(demoVariable);
+		})();
+	</script>
+</html>
+
+<!--
+babel.js
+https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.7.7/babel.js 
+-->

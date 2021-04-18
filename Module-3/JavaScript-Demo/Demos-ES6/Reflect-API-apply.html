@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>Reflect-API</title>
+	</head>
+	<body>
+		<h1>Reflect.apply() - Method</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		class Foo{
+			constructor(){
+				this.id = 100;
+			}
+			display(arg1,arg2){
+				console.log("this.id : ",this.id,"arg1 : ",arg1,"arg2 : ",arg2);
+			}
+		}
+		
+		Reflect.apply(Foo.prototype.display,{id:1000},["Argumen1","Argument2"]);
+	})();
+	</script>
+</html>

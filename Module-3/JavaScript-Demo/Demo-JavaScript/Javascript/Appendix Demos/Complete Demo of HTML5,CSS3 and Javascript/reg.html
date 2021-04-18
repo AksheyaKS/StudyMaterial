@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Registration Page</title>
+
+<link href="reg.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="reg.js"></script>
+
+</head>
+<body>
+
+
+<form action="regSuccess.html" method="post" onsubmit="return checkEmptyFields()"> 
+<table>
+
+ <tr><th colspan="3">Registration Form</th></tr>
+ 
+ <tr>
+  <td colspan="3"><span id="mem"></span></td>
+ </tr>
+ 
+ <tr>
+  <td>Username</td>
+  <td><input type="text" id="un" name="username" onkeyup="checkName()"/><span>*</span></td>  
+  <td><span id="ne"></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Password</td>
+  <td><input type="password" id="pwd" name="password"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Email</td>
+  <td><input type="text" id="eml" name="email"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Mobile</td>
+  <td><input type="text" name="mobile"/></td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Date Of Birth</td>
+  <td><input type="text" name="dob"/></td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Gender</td>
+  <td><input type="radio" value="M" name="gender"/>Male<input type="radio" value="F" name="gender"/>Female</td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Skills</td>
+  <td>
+   <input type="checkbox" value="wb" name="skill"/>WebBasics
+   <input type="checkbox" value="orc" name="skill"/>Oracle
+   <input type="checkbox" value="cj" name="skill"/>Core Java
+   <input type="checkbox" value="sp" name="skill"/>Spring
+  </td>
+ </tr>
+ 
+ <tr>
+   <td>City</td>
+   <td>
+    <select name="city">
+      <option>Select</option>
+      <option>Bangalore</option>
+      <option>Mumbai</option>
+      <option>Delhi</option>
+      <option>Chennai</option>
+    </select>
+   </td>
+ </tr>
+ 
+ <tr>
+  <td colspan="3"><input type="submit" value="Register"/></td>
+ </tr>
+
+</table>
+</form>
+</body>
+</html>

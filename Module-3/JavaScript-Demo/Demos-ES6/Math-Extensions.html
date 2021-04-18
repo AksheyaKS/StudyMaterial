@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Math Extenions</title>
+	</head>
+	<body>
+		<h1>ES6 - Math Extensions</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		/*hyberbolic functions*/
+		console.log("Math.sinh(0) : "+Math.sinh(0));    //hyberbolic sine of a value
+		console.log("Math.cosh(0) : "+Math.cosh(0));    //hyberbolic cosine of a value
+		console.log("Math.tanh(0) : "+Math.tanh(0));    //hyberbolic tangent of a value
+		console.log("Math.asinh(0) : "+Math.asinh(0));  //inverse hyperbolic sine of a value
+		console.log("Math.acosh(0) : "+Math.acosh(1));  //inverse hyperbolic cosine of a value
+		console.log("Math.atanh(0) : "+Math.atanh(0));  //inverse hyperbolic tangent of a value
+		console.log("Math.hypot(2, 2, 1) : "+Math.hypot(2, 2, 1)); //Pythagoras theorem
+		
+		/*Arithmetic functions*/
+		console.log("Math.log2(16) : "+Math.log2(16));    //log base 2
+		console.log("Math.log10(1000) : "+Math.log10(1000)); //log base 10
+		console.log("Math.log1p(0) : "+Math.log1p(0));    //same as log(1 + value)
+		console.log("Math.expm1(0) : "+Math.expm1(0));    //inverse of Math.log1p()
+		console.log("Math.cbrt(8) : "+Math.cbrt(8));     //cube root of a value
+		
+		/*Miscellaneous  functions*/
+		//Math.sign() function returns the sign of a number, indicating weather the number is negative, positive or zero.
+		console.log("Math.sign('11') : "+Math.sign('11'));   
+		console.log("Math.sign(-11) : "+Math.sign(-11)); 
+		console.log("Math.sign(0) : "+Math.sign(0));    
+		console.log("Math.sign('A') : "+Math.sign('A'));    
+		
+		//Math.trunc() function returns the integer part of a number by removing any fractional digit.
+		console.log("Math.trunc(11.17) : "+Math.trunc(11.57));   
+		console.log("Math.trunc(-1.112) : "+Math.trunc(-1.112)); 
+		
+		//Math.fround() function rounds a number to a 32-bit floating point value. 
+		console.log("Math.fround(0) : "+Math.fround(0));   
+		console.log("Math.fround(1) : "+Math.fround(1)); 
+		console.log("Math.fround(1.137) : "+Math.fround(1.137)); 
+		console.log("Math.fround(1.5) : "+Math.fround(1.5)); 
+		
+		
+		
+		
+		
+
+	})();
+	</script>
+</html>

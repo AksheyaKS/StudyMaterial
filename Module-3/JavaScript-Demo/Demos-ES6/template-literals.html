@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Template Literals</title>
+	</head>
+	<body>
+		<h1>ES6 - Template Literals</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		let name = "Karthik";
+		console.log(`Name : ${name}`);
+		
+		let a = 5;
+		let b = 6;
+		let result = `Addition of ${a} and ${b} is ${a+b}`;
+		console.log(result);
+		
+		/*tag functions*/
+		let processInstructions = function(strings,...values){
+			console.log(strings);
+			console.log(values);
+		}
+		
+		let id = 714709;
+		let department = 'Training'
+		
+		processInstructions `Hi ${id} from ${department}.`; //tagged template string 
+		
+	})();
+	</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - Generators</title>
+	</head>
+	<body>
+		<h1>ES6 - Generators</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		/*Generators - basics*/
+		function *process1(){
+			yield 1;
+			yield 2;
+		}
+		
+		var iterator1 = process1();
+		console.log('Generators-Basics');
+		console.log(iterator1.next());
+		console.log(iterator1.next());
+		console.log(iterator1.next());
+		
+		/*Generators - omitting values for yield*/
+		function *process2(){
+			yield 1;
+			yield; //returns undefined;
+		}
+		var iterator2 = process2();
+		console.log('Omitting values for yield');
+		console.log(iterator2.next());
+		console.log(iterator2.next());
+		console.log(iterator2.next());
+		
+		/*Generators - passing optional argument for yield*/
+		function *process3(){
+			yield;
+			yield; //returns undefined;
+		}
+		
+		var iterator3 = process3();
+		console.log('passing optional argument for yield');
+		console.log(iterator3.next(10));
+		console.log(iterator3.next(20));
+		console.log(iterator3.next());
+		
+		/*Generators - yield* keyword */
+		function *process4(){
+			yield 10;
+			yield* "IND";
+		}
+		
+		var iterator4 = process4();
+		console.log('yield* keyword');
+		console.log(iterator4.next());
+		console.log(iterator4.next());
+		console.log(iterator4.next());
+		console.log(iterator4.next());
+		console.log(iterator4.next());
+		
+		/*Generators - Throwing Exception */
+		function *process5(){
+			try
+			{
+				yield 1;
+			}
+			catch(e)
+			{
+				console.log(e);
+			}
+
+			try
+			{
+				yield 2;
+			}
+			catch(e)
+			{
+				console.log(e);
+			}
+		}
+		
+		var iterator5 = process5();
+		console.log('Throwing Exception');
+		console.log(iterator5.next());
+		console.log(iterator5.next());
+		console.log(iterator5.throw('Custom Exception occured while yielding 2'));
+	})();
+	</script>
+</html>

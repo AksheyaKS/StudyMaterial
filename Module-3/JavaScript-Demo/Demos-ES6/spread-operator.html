@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>ES6 - spread operator</title>
+	</head>
+	<body>
+		<h1>ES6 - spread operator</h1>
+		<h3>Press F12 to open Developer tool to see the results</h3>
+	</body>
+	<script>
+	(function(){
+		
+		var data = [7,3,6];
+		var maximumData = Math.max(...data);
+		console.log("Maximum Value : "+maximumData);
+		
+		var addNumbers=function(a,b){
+			return a+b;
+		}
+		
+		var numbers = [2,4];
+		var addResult = addNumbers(...numbers);
+		console.log("Addition : "+addResult);
+		
+		
+		var nameChars = [..."Karthik"];
+		console.log(nameChars);
+		
+		
+	})();
+	</script>
+</html>
